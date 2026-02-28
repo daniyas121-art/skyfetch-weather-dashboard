@@ -11,3 +11,16 @@ font-family:Arial;
 .error {
   color: red;
 }
+#forecast-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.forecast-card {
+  background: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
