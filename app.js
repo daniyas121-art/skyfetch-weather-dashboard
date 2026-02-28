@@ -1,30 +1,43 @@
-const apiKey="61a4d32dfdbe3912b7e8b4f11eaf4e51";
+const apiKey = "61a4d32dfdbe3912b7e8b4f11eaf4e51";
 
-function getWeather(city){
+async function getWeather() {
+  try {
+    const cityName = "Bangalore";
 
-const url=
-`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const response = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
+    );
 
-axios.get(url)
+    document.getElementById("city").innerText = response.data.name;
+    document.getElementById("temp").innerText = response.data.main.temp + " °C";
+    document.getElementById("desc").innerText = response.data.weather[0].description;
+    document.getElementById("icon").src =
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`;
 
-.then(function(res){
-
-const d=res.data;
-
-document.getElementById("city").innerText=d.name;
-document.getElementById("temp").innerText=d.main.temp+"°C";
-document.getElementById("desc").innerText=d.weather[0].description;
-
-const icon=d.weather[0].icon;
-document.getElementById("icon").src=
-`https://openweathermap.org/img/wn/${icon}@2x.png`;
-
-})
-
-.catch(function(err){
-console.log(err);
-});
-
+  } catch (error) {
+    console.log("Error fetching weather");
+  }
 }
 
-getWeather("London");
+getWeather();
+
+async function getWeather() {
+  try {
+    const cityName = "Bangalore";
+
+    const response = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
+    );
+
+    document.getElementById("city").innerText = response.data.name;
+    document.getElementById("temp").innerText = response.data.main.temp + " °C";
+    document.getElementById("desc").innerText = response.data.weather[0].description;
+    document.getElementById("icon").src =
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`;
+
+  } catch (error) {
+    console.log("Error fetching weather");
+  }
+}
+
+getWeather();
