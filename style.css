@@ -11,3 +11,26 @@ font-family:Arial;
 .error {
   color: red;
 }
+#recent-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#recent-searches button {
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #0077ff;
+  color: white;
+}
+
+#clear-history {
+  margin-top: 10px;
+  padding: 6px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
