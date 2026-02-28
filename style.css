@@ -1,0 +1,13 @@
+body{
+text-align:center;
+background:purple;
+color:white;
+font-family:Arial;
+}
+.loading {
+  color: yellow;
+}
+
+.error {
+  color: red;
+}
